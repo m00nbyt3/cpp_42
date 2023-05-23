@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
+/*   PhoneBookClass.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 12:41:10 by ycarro            #+#    #+#             */
-/*   Updated: 2023/05/11 14:36:22 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/05/23 12:14:49 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstring>
+#include <iomanip>
 #include "PhoneBookClass.hpp"
 #include "ContactClass.hpp"
 
@@ -79,15 +80,16 @@ void	PhoneBook::search()
 	int	i;
 
 	i = 0;
-	while(i < 8)
+	while(i < 8 && !_contacts[i].getIsEmpty())
 	{
-		std::cout << i;
-		std::cout << "    ";
-		std::cout << _contacts[i].getInfo("FirstName") << std::endl;
-		std::cout << "    ";
-		std::cout << _contacts[i].getInfo("LastName") << std::endl;
-		std::cout << "    ";
-		std::cout << _contacts[i].getInfo("Nickname") << std::endl;
+		std::cout << std::right << std::setw(10) << i 
+		<< "|"
+		<< std::setw(10) << (_contacts[i].getInfo("FirstName").length() > 10 ? (_contacts[i].getInfo("FirstName").substr(0, 9) + '.') : _contacts[i].getInfo("FirstName"))
+		<< "|"
+		<< std::setw(10)<< (_contacts[i].getInfo("LastName").length() > 10 ? (_contacts[i].getInfo("LastName").substr(0, 9) + '.') : _contacts[i].getInfo("LastName"))
+		<< "|"
+		<< std::setw(10)<< (_contacts[i].getInfo("Nickname").length() > 10 ? (_contacts[i].getInfo("Nickname").substr(0, 9) + '.') : _contacts[i].getInfo("Nickname"))
+		<< std::endl;
 		i++;
 	}
 }
