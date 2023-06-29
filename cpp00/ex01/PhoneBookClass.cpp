@@ -13,6 +13,9 @@
 #include <iostream>
 #include <cstring>
 #include <iomanip>
+#include <sstream>
+#include <stdlib.h>
+#include <cstdio>
 #include "PhoneBookClass.hpp"
 #include "ContactClass.hpp"
 
@@ -28,8 +31,9 @@ PhoneBook::~PhoneBook(void)
 }
 
 void	PhoneBook::init(void)
-{
-	memset(_contacts, 0, sizeof(_contacts));
+{	
+	//_contacts[0] = 0;
+	//memset(_contacts, 0, sizeof(_contacts));
 }
 
 void	PhoneBook::add(void)
@@ -78,11 +82,13 @@ void	PhoneBook::add(void)
 void	PhoneBook::search()
 {
 	int	i;
+	std::string option;
+	int o;
 
 	i = 0;
 	while(i < 8 && !_contacts[i].getIsEmpty())
 	{
-		std::cout << std::right << std::setw(10) << i 
+		std::cout << std::right << std::setw(10) << i+1 
 		<< "|"
 		<< std::setw(10) << (_contacts[i].getInfo("FirstName").length() > 10 ? (_contacts[i].getInfo("FirstName").substr(0, 9) + '.') : _contacts[i].getInfo("FirstName"))
 		<< "|"
@@ -92,4 +98,17 @@ void	PhoneBook::search()
 		<< std::endl;
 		i++;
 	}
+	std::cout << "Select an option: ";
+	getline(std::cin, option);
+	std::istringstream(option) >> o;
+	if (o < 1 || o > i+1)
+		std::cout << "INVALID OPTION" << std::endl <<std::endl;
+	else
+	{
+		o--;
+		std::cout << "Phone Number: ";
+		std::cout << _contacts[o].getInfo("PhoneNumber") << std::endl;
+		getchar() >> 0;
+	}
+	system("clear");
 }
