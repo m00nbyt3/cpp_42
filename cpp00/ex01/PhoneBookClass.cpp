@@ -46,6 +46,9 @@ void	PhoneBook::add(void)
 	std::string DarkestSecret;
 	int	i;
 
+	//Clear screen
+	system("clear");
+
 	//Get first name
 	std::cout << "Input the First Name: ";
 	getline(std::cin, FirstName);
@@ -77,6 +80,10 @@ void	PhoneBook::add(void)
 		i++;
 	_contacts[i] = NewContact;
 	_contacts[i].setIsEmpty();
+
+	//Clear screen
+	system("clear");
+	std::cout << "Contact added succesfully!" << std::endl << std::endl;
 }
 
 void	PhoneBook::search()
@@ -85,6 +92,8 @@ void	PhoneBook::search()
 	std::string option;
 	int o;
 
+	system("clear");
+	std::cout << "Contact list:" << std::endl << std::endl;
 	i = 0;
 	while(i < 8 && !_contacts[i].getIsEmpty())
 	{
@@ -98,7 +107,7 @@ void	PhoneBook::search()
 		<< std::endl;
 		i++;
 	}
-	std::cout << "Select an option: ";
+	std::cout << std::endl << "Select an option: ";
 	getline(std::cin, option);
 	std::istringstream(option) >> o;
 	if (o < 1 || o > i+1)
@@ -106,9 +115,10 @@ void	PhoneBook::search()
 	else
 	{
 		o--;
-		std::cout << "Phone Number: ";
-		std::cout << _contacts[o].getInfo("PhoneNumber") << std::endl;
-		getchar() >> 0;
+		system("clear");
+		std::cout << "Getting " << _contacts[o].getInfo("FirstName") << "'s info:" << std::endl << std::endl <<
+		"Phone Number: " << _contacts[o].getInfo("PhoneNumber") << std::endl << std::endl << std::endl;
 	}
+	getchar();
 	system("clear");
 }
