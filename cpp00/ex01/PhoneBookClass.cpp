@@ -6,13 +6,14 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 12:41:10 by ycarro            #+#    #+#             */
-/*   Updated: 2023/05/23 12:14:49 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/05/31 10:21:07 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstring>
 #include <iomanip>
+#include <cctype>
 #include "PhoneBookClass.hpp"
 #include "ContactClass.hpp"
 
@@ -75,9 +76,15 @@ void	PhoneBook::add(void)
 	_contacts[i].setIsEmpty();
 }
 
+void	PhoneBook::_ShowContact(int	n)
+{
+	std::cout << (_contacts[n].getInfo("FirstName"));
+}
+
 void	PhoneBook::search()
 {
 	int	i;
+	std::string	option;
 
 	i = 0;
 	while(i < 8 && !_contacts[i].getIsEmpty())
@@ -91,5 +98,20 @@ void	PhoneBook::search()
 		<< std::setw(10)<< (_contacts[i].getInfo("Nickname").length() > 10 ? (_contacts[i].getInfo("Nickname").substr(0, 9) + '.') : _contacts[i].getInfo("Nickname"))
 		<< std::endl;
 		i++;
+	}
+	while(true)
+	{	getline(std::cin, option);
+
+		try
+		{
+			_ShowContact(std::stoi(option));
+		}
+		catch (std::exception &ex)
+		{
+			std::cout << "err";
+			continue;
+		}
+		break;
+
 	}
 }

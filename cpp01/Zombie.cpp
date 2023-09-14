@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBookClass.hpp                                 :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/26 12:40:55 by ycarro            #+#    #+#             */
-/*   Updated: 2023/05/31 09:59:46 by ycarro           ###   ########.fr       */
+/*   Created: 2023/09/11 10:36:19 by ycarro            #+#    #+#             */
+/*   Updated: 2023/09/11 12:23:58 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_H
-# define PHONEBOOK_CLASS_H
+#include "Zombie.hpp"
 
-#include "ContactClass.hpp"
+//Constructor
+Zombie::Zombie(std::string name)
+{
+	this->_name = name;
+	std::cout << "Zombie " << this->_name << " created" << std::endl;
+}
 
-class PhoneBook {
 
-public:
+//Destructor
+Zombie::~Zombie(void)
+{
+	std::cout << "Zombie " << this->_name << " destroyed" << std::endl;
+}
 
-	PhoneBook(void);
-	~PhoneBook(void);
 
-	void	init();
-	void	add();
-	void	search();
-	void	exit();
-
-private:
-
-	Contact _contacts[8];
-	void	_ShowContact(int n);
-
-};
-
-#endif
+//Public methods
+void	Zombie::announce(void)
+{
+	std::cout << this->_name << " BraiiiiiiinnnzzzZ..." << std::endl;
+}

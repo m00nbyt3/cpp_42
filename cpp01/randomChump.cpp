@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBookClass.hpp                                 :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/26 12:40:55 by ycarro            #+#    #+#             */
-/*   Updated: 2023/05/31 09:59:46 by ycarro           ###   ########.fr       */
+/*   Created: 2023/09/11 12:02:19 by ycarro            #+#    #+#             */
+/*   Updated: 2023/09/11 12:24:20 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_H
-# define PHONEBOOK_CLASS_H
+#include "Zombie.hpp"
 
-#include "ContactClass.hpp"
+//Dumb zombie
 
-class PhoneBook {
-
-public:
-
-	PhoneBook(void);
-	~PhoneBook(void);
-
-	void	init();
-	void	add();
-	void	search();
-	void	exit();
-
-private:
-
-	Contact _contacts[8];
-	void	_ShowContact(int n);
-
-};
-
-#endif
+void randomChump(std::string name)
+{
+	Zombie stack_zombie(name);
+	stack_zombie.announce();
+}
