@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:36:19 by ycarro            #+#    #+#             */
-/*   Updated: 2023/09/18 13:07:29 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/09/18 15:35:29 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Zombie
 {
 public:
-	Zombie();
+	Zombie(void);
 	~Zombie(void);
 
 	void	announce(void);

@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 10:36:19 by ycarro            #+#    #+#             */
-/*   Updated: 2023/09/18 15:53:23 by ycarro           ###   ########.fr       */
+/*   Created: 2023/09/18 15:26:20 by ycarro            #+#    #+#             */
+/*   Updated: 2023/09/18 15:46:06 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_H
+# define WEAPON_H
 
-//Constructor
-Zombie::Zombie(void)
+#include <iostream>
+
+class Weapon
 {
-}
+	public:
 
+		//Constructors
+		Weapon(void);
+		~Weapon(void);
 
-//Destructor
-Zombie::~Zombie(void)
-{
-	std::cout << "Zombie " << this->_name << " destroyed" << std::endl;
-}
+		const std::string	getType(void);
+		void				setType(std::string type);
 
-
-//Public methods
-void	Zombie::announce(void)
-{
-	std::cout << this->_name << " BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-void	Zombie::setName(std::string Name)
-{
-	this->_name = Name;
+	private:
+		std::string type;
 }
