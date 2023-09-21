@@ -6,24 +6,27 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:26:20 by ycarro            #+#    #+#             */
-/*   Updated: 2023/09/18 15:47:33 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/09/21 15:10:45 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMANA_H
-#define HUMANA_H
+# define HUMANA_H
 
 #include <iostream>
+#include "Weapon.hpp"
 
 
 class HumanA
 {
 	public:
-		HumanA(void);
+		HumanA(std::string name, Weapon Weapon);
 		~HumanA(void);
+		void		attack(void);
 
 	private:
-		std::string Weapon;
-		std::string name;
-		void		attack(void);
-}
+		Weapon _Weapon;
+		std::string _name;
+};
+
+#endif

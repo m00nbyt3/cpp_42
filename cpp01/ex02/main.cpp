@@ -5,21 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 10:54:22 by ycarro            #+#    #+#             */
-/*   Updated: 2023/09/18 12:59:23 by ycarro           ###   ########.fr       */
+/*   Created: 2023/09/21 10:51:01 by ycarro            #+#    #+#             */
+/*   Updated: 2023/09/21 11:02:47 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-int	main(void)
+int main(void)
 {
-	int N = 6;
-	Zombie *myHorde = zombieHorde(N, "Pip");
-	for(int i = 0; i < N; i++)
-	{
-		myHorde[i].announce();
-	}
-	delete[] myHorde;
-	return(0);
+	//Variables
+	std::string brain = "HI THIS IS A BRAIN";
+	std::string *stringPTR = &brain;
+	std::string &stringREF = brain;
+
+	//Addresses
+	std::cout << &brain << std::endl;
+	std::cout << stringPTR << std::endl;
+	std::cout << &stringREF << std::endl << std::endl;;
+
+	//Pointed values
+	std::cout << brain << std::endl;
+	std::cout << *stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
+
+	return (0);
+
 }

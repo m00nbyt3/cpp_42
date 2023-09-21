@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 10:36:19 by ycarro            #+#    #+#             */
-/*   Updated: 2023/09/11 12:24:01 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/09/18 15:35:29 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@
 class Zombie
 {
 public:
-	Zombie(std::string name);
+	Zombie(void);
 	~Zombie(void);
 
 	void	announce(void);
+	void	setName(std::string Name);
 
 private:
 	std::string _name;
 };
 
-Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
+Zombie	*zombieHorde(int N, std::string name);
 
 #endif

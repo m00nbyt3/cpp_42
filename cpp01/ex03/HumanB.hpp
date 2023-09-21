@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:26:20 by ycarro            #+#    #+#             */
-/*   Updated: 2023/09/18 15:48:51 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/09/21 15:10:51 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@
 class HumanB
 {
 	public:
-		HumanB(void);
+		HumanB(std::string name);
 		~HumanB(void);
+		void		attack(void);
 
 	private:
-		std::string Weapon;
-		std::string name;
-		void		attack(void);
-}
+		std::string _Weapon;
+		std::string _name;
+};
+
+#endif
