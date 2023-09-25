@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:26:20 by ycarro            #+#    #+#             */
-/*   Updated: 2023/09/21 15:18:56 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/09/25 12:30:48 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 class Weapon
 {
 	public:
-		Weapon(std::string type);
+		Weapon(const std::string &type);
 		~Weapon(void);
 
 		const std::string	getType(void);
-		void				setType(std::string type);
+		void				setType(const std::string &type);
 
 	private:
-		std::string type;
+		std::string _type;
 };
 
 #endif

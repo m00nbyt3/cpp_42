@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:26:20 by ycarro            #+#    #+#             */
-/*   Updated: 2023/09/21 15:10:45 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/09/25 12:21:59 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class HumanA
 {
 	public:
-		HumanA(std::string name, Weapon Weapon);
+		HumanA(std::string name, Weapon &Weapon);
 		~HumanA(void);
 		void		attack(void);
 

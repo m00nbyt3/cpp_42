@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:26:20 by ycarro            #+#    #+#             */
-/*   Updated: 2023/09/21 15:22:16 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/09/25 12:22:20 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,19 @@
 
 //Constructor
 
-HumanA::HumanA(std::string name, Weapon myWeapon)
+HumanA::HumanA(std::string name, Weapon &myWeapon)
+	:_Weapon(myWeapon), _name(name)
 {
-	this->_name = name; 
-	this->_Weapon = myWeapon;
+	std::cout << this->_name << " joined the reststance, with a " 
+	<< this->_Weapon.getType() << std::endl;
 }
 
 HumanA::~HumanA(void)
 {
+}
+
+void	HumanA::attack(void)
+{
+	std::cout << this->_name << " attacks with their " 
+	<< this->_Weapon.getType() << std::endl;
 }
