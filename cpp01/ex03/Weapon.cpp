@@ -6,27 +6,27 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:26:20 by ycarro            #+#    #+#             */
-/*   Updated: 2023/09/25 12:31:03 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/10/03 15:25:41 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(const std::string &_type)
+Weapon::Weapon(std::string type)
 {
-	this->setType(_type);
+	this->setType(type);
 }
 
 Weapon::~Weapon(void)
 {
 }
 
-void	Weapon::setType(const std::string &_type)
+void	Weapon::setType(std::string newType)
 {
-	this->_type = _type;
+	this->_type = newType;
 }
 
 const std::string	Weapon::getType(void)
 {
-	return(_type);
+	return((const std::string &)this->_type);
 }

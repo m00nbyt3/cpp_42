@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:26:20 by ycarro            #+#    #+#             */
-/*   Updated: 2023/09/25 12:21:59 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/10/03 14:36:24 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class HumanA
 		void		attack(void);
 
 	private:
-		Weapon _Weapon;
+		Weapon &_Weapon;
 		std::string _name;
 };
 
