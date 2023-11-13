@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:16:26 by ycarro            #+#    #+#             */
-/*   Updated: 2023/05/11 14:36:32 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/11/13 17:50:40 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ int	main(void)
 	while (true)
 	{
 		std::cout << "PHONEBOOK" << std::endl << std::endl;
-		std::cout << "1. Add a contact" << std::endl;
-		std::cout << "2. Search a contact" << std::endl;
-		std::cout << "3. Exit" << std::endl << std::endl;
+		std::cout << "ADD: Add a contact" << std::endl;
+		std::cout << "SEARCH: Search a contact" << std::endl;
+		std::cout << "EXIT: Exit" << std::endl << std::endl;
 		std::cout << "Select an option (1 - 3): ";
 		//std::cin >> option;
 		getline(std::cin, option);
-		if (option == "1")
+		if (option == "ADD")
 			phonebook.add();
-		else if (option == "2")
+		else if (option == "SEARCH")
 			phonebook.search();
-		else if (option == "3")
+		else if (option == "EXIT")
 			break;
 		else
 		{
