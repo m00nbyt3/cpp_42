@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <stdlib.h>
 #include "PhoneBookClass.hpp"
 
 int	main(void)
@@ -40,6 +41,6 @@ int	main(void)
 			std::cout << "INVALID OPTION" << std::endl << std::endl;
 			continue;
 		}
-		system("clear");
+		//system("clear");
 	}
 }
