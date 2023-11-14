@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 12:41:10 by ycarro            #+#    #+#             */
-/*   Updated: 2023/11/14 12:13:21 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/11/14 15:18:46 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,28 +42,63 @@ void	PhoneBook::add(void)
 	system("clear");
 
 	//Get first name
-	std::cout << "Input the First Name: ";
-	getline(std::cin, FirstName);
+	while(true)
+	{
+		std::cout << "Input the First Name: ";
+		getline(std::cin, FirstName);
+		if(FirstName.empty())
+			std::cout << "Input shouldn't be empty..." << std::endl;
+		else
+			break;
+	}
 	NewContact.setInfo(FirstName, "FirstName");
 
 	//Get last Name
-	std::cout << "Input the Last Name: ";
-	getline(std::cin, LastName);
+	while(true)
+	{
+		std::cout << "Input the Last Name: ";
+		getline(std::cin, LastName);
+		if(LastName.empty())
+			std::cout << "Input shouldn't be empty..." << std::endl;
+		else
+			break;
+	}
 	NewContact.setInfo(LastName, "LastName");
 
 	//Get nickname
-	std::cout << "Input the Nickname: ";
-	getline(std::cin, Nickname);
+	while(true)
+	{
+		std::cout << "Input the Nickname: ";
+		getline(std::cin, Nickname);
+		if(Nickname.empty())
+			std::cout << "Input shouldn't be empty..." << std::endl;
+		else
+			break;
+	}
 	NewContact.setInfo(Nickname, "Nickname");
 
 	//Get phone number
-	std::cout << "Input the Phone Number: ";
-	getline(std::cin, PhoneNumber);
+	while(true)
+	{
+		std::cout << "Input the Phone Number: ";
+		getline(std::cin, PhoneNumber);
+		if(PhoneNumber.empty())
+			std::cout << "Input shouldn't be empty..." << std::endl;
+		else
+			break;
+	}
 	NewContact.setInfo(PhoneNumber, "PhoneNumber");
 
 	//Get darkest secret
-	std::cout << "Input the Darkest Secret: ";
-	getline(std::cin, DarkestSecret);
+	while(true)
+	{
+		std::cout << "Input the Darkest Secret: ";
+		getline(std::cin, DarkestSecret);
+		if(DarkestSecret.empty())
+			std::cout << "Input shouldn't be empty..." << std::endl;
+		else
+			break;
+	}
 	NewContact.setInfo(DarkestSecret, "DarkestSecret");
 
 	//Save the contact in a usable space
