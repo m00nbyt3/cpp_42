@@ -6,19 +6,21 @@
 #    By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 13:19:04 by ycarro            #+#    #+#              #
-#    Updated: 2023/11/14 20:08:57 by ycarro           ###   ########.fr        #
+#    Updated: 2023/11/14 19:51:04 by ycarro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := ex02
+NAME := ex01
 
 CPL := c++
 
 INCLUDE :=  -I include/
 
-SRCFILES := main.cpp 
+SRCFILES := main.cpp \
+			Zombie.cpp \
+			zombieHorde.cpp
 
-HEADERFILES :=
+HEADERFILES := include/Zombie.hpp
 
 OBJFILES := $(SRCFILES:%.cpp=obj/%.o)
 
