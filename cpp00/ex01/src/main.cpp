@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:16:26 by ycarro            #+#    #+#             */
-/*   Updated: 2023/11/13 17:50:40 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/11/14 11:36:07 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,13 @@ int	main(void)
 		std::cout << "ADD: Add a contact" << std::endl;
 		std::cout << "SEARCH: Search a contact" << std::endl;
 		std::cout << "EXIT: Exit" << std::endl << std::endl;
-		std::cout << "Select an option (1 - 3): ";
-		//std::cin >> option;
+		std::cout << "Select an option: ";
 		getline(std::cin, option);
-		if (option == "ADD")
+		if (option == "ADD" || option == "add")
 			phonebook.add();
-		else if (option == "SEARCH")
+		else if (option == "SEARCH" || option == "search")
 			phonebook.search();
-		else if (option == "EXIT")
+		else if (option == "EXIT" || option == "exit")
 			break;
 		else
 		{
@@ -41,6 +40,5 @@ int	main(void)
 			std::cout << "INVALID OPTION" << std::endl << std::endl;
 			continue;
 		}
-		//system("clear");
 	}
 }

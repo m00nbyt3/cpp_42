@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 12:40:55 by ycarro            #+#    #+#             */
-/*   Updated: 2023/05/31 09:59:46 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/11/14 12:12:35 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ public:
 	PhoneBook(void);
 	~PhoneBook(void);
 
-	void	init();
 	void	add();
 	void	search();
 	void	exit();

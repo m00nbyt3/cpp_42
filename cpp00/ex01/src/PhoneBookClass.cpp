@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 12:41:10 by ycarro            #+#    #+#             */
-/*   Updated: 2023/11/13 15:28:08 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/11/14 12:13:21 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,10 @@
 
 PhoneBook::PhoneBook(void)
 {
-	//std::cout << "PhoneBook created" << std::endl;
-	return;
 }
 
 PhoneBook::~PhoneBook(void)
 {
-	//std::cout << "PhoneBook closed" << std::endl;
-}
-
-void	PhoneBook::init(void)
-{	
-	//_contacts[0] = 0;
-	//memset(_contacts, 0, sizeof(_contacts));
 }
 
 void	PhoneBook::add(void)
@@ -75,12 +66,19 @@ void	PhoneBook::add(void)
 	getline(std::cin, DarkestSecret);
 	NewContact.setInfo(DarkestSecret, "DarkestSecret");
 
-	//Save the contact in a free space
+	//Save the contact in a usable space
 	i = 0;
-	while (i < 8 && !_contacts[i].getIsEmpty())
+	while (i < 8 && !_contacts[i].getIsUsable())
 		i++;
+	if(i == 8)
+	{
+		for (i = 1; i < 8; i++)
+			_contacts[i].setIsUsable();
+		i = 0;
+	}
 	_contacts[i] = NewContact;
-	_contacts[i].setIsEmpty();
+	_contacts[i].setNotEmpty();
+	_contacts[i].setNotUsable();
 
 	//Clear screen
 	system("clear");
@@ -117,12 +115,12 @@ void	PhoneBook::search()
 	}
 	std::cout << std::endl << "Select an option: ";
 	getline(std::cin, option);
-	std::istringstream(option) >> o;
-	system("clear");
-	if (o < 1 || o > i)
+	o = int(option[0] - '0');
+	if (option[1] || o < 1 || o > i)
 		std::cout << "INVALID OPTION" << std::endl <<std::endl;
 	else
 	{
+		system("clear");
 		o--;
 		std::cout << "Getting " << _contacts[o].getInfo("FirstName") << "'s info:" << std::endl << std::endl <<
 		"First Name: " << _contacts[o].getInfo("FirstName") << std::endl <<

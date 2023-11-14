@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:02:58 by ycarro            #+#    #+#             */
-/*   Updated: 2023/05/11 14:33:54 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/11/14 12:12:09 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 
 Contact::Contact(void)
 {
-	//std::cout << "Contact created" << std::endl;
 	_isEmpty = true;
+	_isUsable = true;
 	return;
 }
 
 Contact::~Contact(void)
 {
-	//std::cout << "Contact closed" << std::endl;
 }
 
 bool		Contact::setInfo(std::string info, std::string type)
@@ -55,7 +54,7 @@ std::string	Contact::getInfo(std::string type) const
 	return(NULL);
 }
 
-void	Contact::setIsEmpty()
+void	Contact::setNotEmpty()
 {
 	_isEmpty = false;
 }
@@ -63,4 +62,19 @@ void	Contact::setIsEmpty()
 bool	Contact::getIsEmpty()
 {
 	return(_isEmpty);
+}
+
+void	Contact::setNotUsable()
+{
+	_isUsable = false;
+}
+
+bool	Contact::getIsUsable()
+{
+	return(_isUsable);
+}
+
+void	Contact::setIsUsable()
+{
+	_isUsable = true;
 }

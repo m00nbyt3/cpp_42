@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:20:31 by ycarro            #+#    #+#             */
-/*   Updated: 2023/05/11 14:28:54 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/11/14 12:11:43 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ public:
 	bool		setPhone();
 	std::string	getPhone() const;
 	bool		getIsEmpty();
-	void		setIsEmpty();
+	void		setNotEmpty();
+	bool		getIsUsable();
+	void		setIsUsable();
+	void		setNotUsable();
 
 private:
 
@@ -35,6 +38,7 @@ private:
 	std::string		_PhoneNumber;
 	std::string		_DarkestSecret;
 	bool			_isEmpty;
+	bool			_isUsable;
 };
 
 #endif
