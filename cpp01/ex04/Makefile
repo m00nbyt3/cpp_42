@@ -6,20 +6,19 @@
 #    By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 13:19:04 by ycarro            #+#    #+#              #
-#    Updated: 2023/11/20 15:54:18 by ycarro           ###   ########.fr        #
+#    Updated: 2023/11/15 14:29:59 by ycarro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := ex05
+NAME := ex04
 
 CPL := c++
 
 INCLUDE :=  -I include/
 
-SRCFILES := main.cpp \
-			Harl.cpp
+SRCFILES := main.cpp
 
-HEADERFILES := Harl.hpp
+HFILES :=
 
 OBJFILES := $(SRCFILES:%.cpp=obj/%.o)
 HEADERFILES := $(HFILES:%=include/%)
