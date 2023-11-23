@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:30:30 by ycarro            #+#    #+#             */
-/*   Updated: 2023/10/23 16:52:18 by ycarro           ###   ########.fr       */
+/*   Updated: 2023/11/23 12:40:07 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,22 @@ int main(int argc, char const **argv)
 	//Variable declarations
 	std::string	text;
 	std::string filename;
-	std::string word;
+	std::string toSearch;
+	std::string replacement;
+	//std::string newString;
+	size_t		wordPos;
+	size_t		wordLen;
 	bool notFirstLine;
-	bool notFirstWord;
 
 	//Find errors on input
 	invalidInput(argc);
 
-	//Getting the files ready
+	//Defining variables
 	filename = argv[1];
+	toSearch = argv[2];
+	replacement = argv[3];
+
+	//Getting the files ready
 	std::ifstream OrigFile(filename);
 	std::ofstream NewFile(filename + ".replace");
 
@@ -41,20 +48,17 @@ int main(int argc, char const **argv)
 		if (notFirstLine)
 			NewFile << std::endl;
 		notFirstLine = true;
-		std::istringstream iss(text);
-		iss >> word;
-		notFirstWord = false;
-		while (iss)
+		if (text[0] == 0)
+			continue;
+		//newString = text;
+		wordPos = text.find(toSearch);
+		while (wordPos != std::string::npos)
 		{
-			if (notFirstWord)
-				NewFile << ' ';
-			notFirstWord = true;
-			if (word == argv[2])
-				NewFile << argv[3];
-			else
-				NewFile << word;
-			iss >> word;
+			wordLen = toSearch.length();
+			text = text.substr(0, wordPos) + replacement + text.substr((wordPos+wordLen));
+			wordPos = text.find(toSearch);
 		}
+		NewFile << text;
 	}
 
 	//Closing used files
